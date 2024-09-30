@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Прямоугольная форма -->
+    <solid android:color="#FF6200EE" /> <!-- Задайте желаемый цвет кнопки -->
+
+    <!-- Углы без скругления -->
+    <corners android:radius="0dp" />
+</shape>
