@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- LinearLayout с горизонтальной ориентацией и фиксированной высотой 80dp -->
+    <LinearLayout
+        android:id="@+id/linearLayoutHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Три TextView с равномерным распределением ширины и максимальной высотой -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView 1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView 2" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView 3" />
+    </LinearLayout>
+
+    <!-- LinearLayout с вертикальной ориентацией и фиксированной высотой 80dp, расположенный под предыдущим -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Три TextView с центровкой и полной шириной -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="TextView 4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="TextView 5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="TextView 6" />
+    </LinearLayout>
+
+    <!-- ConstraintLayout, занимающий всё оставшееся пространство -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/tvConstraintLayout1"
+            tools:text="Textview"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvConstraintLayout2"
+            android:layout_marginTop="60dp"
+            />
+
+        <TextView
+            android:id="@+id/tvConstraintLayout2"
+            tools:text="Textview"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvConstraintLayout1"
+            android:layout_marginTop="60dp"
+            />
+
+        <TextView
+            android:id="@+id/tvConstraintLayout3"
+            tools:text="Textview"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvConstraintLayout1"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
